@@ -1,0 +1,52 @@
+{%extends 'layout.html'%}
+
+
+{% block body %}
+
+
+<section class="py-5">
+    <div class="container py-5">
+      <h2 class="h1 text-lg lined mb-5">Contact</h2>
+      <div class="row">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <form id="contact-form" method="post" action="contact.php" class="contact-form form">
+            <div class="row">
+              <div class="form-group col-lg-6">
+                <label for="name" class="font-weight-normal">Your firstname *</label>
+                <input id="name" type="text" name="name" placeholder="Enter your firstname" required class="form-control">
+              </div>
+              <div class="form-group col-lg-6">
+                <label for="surname" class="font-weight-normal">Your lastname *</label>
+                <input id="surname" type="text" name="surname" placeholder="Enter your lastname" required class="form-control">
+              </div>
+              <div class="form-group col-lg-12">
+                <label for="email" class="font-weight-normal">Your email *</label>
+                <input id="email" type="email" name="email" placeholder="Enter your email" required class="form-control">
+              </div>
+              <div class="form-group col-lg-12">
+                <label for="message" class="font-weight-normal">Your message for us *</label>
+                <textarea id="message" rows="4" name="message" placeholder="Enter your message" required class="form-control"></textarea>
+              </div>
+              <div class="form-group col-lg-12">
+                <button type="submit" class="btn btn-outline-primary btn-block">Send message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-6">
+          <p class="mb-4">Effects present letters inquiry no an removed or friends. Desire behind latter me though in. Supposing shameless am he engrossed up additions. My possible peculiar together to. Desire so better am cannot he up before points. Remember mistaken opinions it pleasure of debating. Court front maids forty if aware their at. Chicken use are pressed removed.</p>
+          <p>Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy. Without farther she exposed saw man led. Along on happy could cease green oh.</p>
+          <ul class="list-inline text-center">
+            <li class="list-inline-item"><a href="#" class="social-link facebook"><i class="fa fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link twitter"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link google-plus"><i class="fa fa-google-plus-g"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link instagram"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link email"><i class="fa fa-envelope"></i></a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

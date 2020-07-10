@@ -1,0 +1,49 @@
+
+{%extends 'layout.html'%}
+
+{% load static %}
+
+{% block body %}
+<div class="container my-5">
+    <h2>hosgeldiniz <small>{{request.user.username}}</small></h2>
+    <a href="/blog/addarticle">
+        <button type="button" class="btn btn-danger" >Add Article</button>
+    </a>
+    <a href="/blog/addproject">
+        <button type="button" class="btn btn-danger" >Add Project</button>
+    </a>
+    
+</div>
+<div class='container'>
+    <table class="table">
+        
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Created Date</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for article in articles %}
+          <tr>
+            
+            <td>{{article.id}}</td>
+            <td><a href="/blog/{{article.id}}">{{article.title}}</a></td>
+            <td>{{article.created_date}}</td>
+            <td>
+                <a href="/user/update/{{article.id}}" class = "btn btn-primary">Update</a>
+            </td>
+            <td>
+                <a href="/user/delete/{{article.id}}" class = "btn btn-primary">Delete</a>
+            </td>
+          </tr>
+          {%endfor%}
+         
+        </tbody>
+      </table>
+</div>
+
+{% endblock %}

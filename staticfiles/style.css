@@ -1,0 +1,22 @@
+
+.container{
+    padding-left: 80px;padding-right: 80px;
+}
+li a{
+    font-size: large;
+}
+
+
+.navbar{
+    opacity: 0.8;
+}
+.jumbotron{
+    background-image: url(static/img/main3.JPG);
+    background-size: cover;
+    background-position:center;
+}
+.navbar-nav > li >a{
+    margin-left: 10px;
+    margin-right: 20px;
+   
+}

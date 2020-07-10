@@ -1,0 +1,39 @@
+{%extends 'layout.html'%}
+
+{% load static %}
+
+{% block body %}
+
+<!-- section 2  -->
+
+<section class="content" id="portfolio">
+    <div class="container">
+      <div class="content-section-heading text-center">
+        <h1 class="text-secondary mt-5 mb-5">Portfolio</h1>
+        
+      </div>
+      
+      <div class="row my-3 ">
+        {%for project in project %}
+        <div class="col-lg-6 my-3">
+          <a class="portfolio-item " href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">{{project.project_name}}</div>
+                <p class="mb-0">{{project.project_description}}</p>
+              </div>
+            </div>
+            <img class="img-fluid " src="{{project.project_image.url}}" alt="">
+          </a>
+        </div>
+        {%endfor%}
+      </div>
+      
+        
+       
+      
+    </div>
+  </section>
+
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{%extends 'layout.html'%}
+
+{% load static %}
+
+{% block body %}
+
+<div class="container">  
+  <div class="row">
+    <div class="col-lg-8">
+      
+            {% if articles%}
+              {%for article in articles%}
+                <div class="card mb-3 my-5">
+                  <div class="row">
+                    <div class="col-md-5">
+                        <a href="{% url 'article:post' article.id %}">
+                        {% if article.article_image %}
+                          <img src="{{article.article_image.url}}" alt="" style='width:300px;' class='card-img'>
+                        {%endif%}
+                        </a>
+                      
+                    </div>
+                    <div class="col-md-7">
+                      <div class='card-body'>
+                        <a href="{% url 'article:post' article.id %}">
+                          <p>{{article.title}}</p>
+                        </a>
+                        <p class="card-text text-muted ">
+                          <small>{{article.created_date}} </small>
+                          <small style='float:right;'>by {{ request.user}}</small>
+                        </p>     
+                        <p class="card-text text-muted">{{article.content | safe | truncatewords:20}}</p>
+                        <a style='float:right;' href="{% url 'article:post' article.id %}">
+                          <p>continue reading...</p>
+                        </a>
+                        
+                      </div>                                      
+                    </div>                  
+                  </div>
+                </div>
+                
+              {%endfor%}
+            
+            {%else%}
+            <div class="my-5">
+              
+                <div class="alert alert-warning">Article is not found</div>
+            </div>
+
+            {%endif%}
+   
+  
+</div>
+{% include '../sidebar.html' %}
+
+{% endblock %}
